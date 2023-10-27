@@ -1,10 +1,6 @@
 #### University: [ITMO University](https://itmo.ru/ru/)
 ##### Faculty: [FICT](https://fict.itmo.ru)
-##### Course: [Introduction in routing](https://github.com/itmo-ict-faculty/introduction-in-routing)
-##### University: [ITMO University](https://itmo.ru/ru/)
-##### Faculty: [FICT](https://fict.itmo.ru)
-##### Course: [Introduction in routing](https://github.com/itmo-ict-faculty/introduction-in-routing)
-Year: 2023/2024
+##### Course: [Network Programming](https://itmo-ict-faculty.github.io/network-programming/)
 
 Group: K34202
 
@@ -12,6 +8,16 @@ Author: Davydov Anton Dmitrievich
 
 Lab: Lab1
 
-Date of create: 
+Date of create: 06.10
 
-Date of finished: 
+Date of finished: 27.10
+
+## Отчёт по лабораторной работе №1 "Установка CHR и Ansible, настройка VPN"
+
+**Цель работы:** развертывание виртуальной машины на базе платформы Yandex Cloud с установленной системой контроля конфигураций Ansible и установка CHR в VirtualBox.
+
+**Ход работы:**
+
+С официального сайта [Mikrotik](https://mikrotik.com/download/archive) скачали образ диска .vdi. Создали виртуальную машину, используя Virtualbox и ранее скачанный образ, выбрали тип сети - Сетевой мост и Разрешить всё.
+
+![Настройки сети]()
