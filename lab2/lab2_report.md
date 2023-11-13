@@ -98,11 +98,11 @@ ansible-playbook -i hosts.ini ansible-playbook.yml
 
 Созданные на машинах пользователи и NTP Clients:
 
-![Users](/pictures/useradd.png)
+![Users](./pictures/useradd.png)
 
 проверка связности машин, а также OSPF на машинах.
 
-![OSPF+IP](/pictures/ospf+ip.png)
+![OSPF+IP](./pictures/ospf+ip.png)
 
 Полный конфиг устройств представлен в файлах:
 
