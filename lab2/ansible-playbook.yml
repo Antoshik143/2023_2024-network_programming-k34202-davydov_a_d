@@ -1,0 +1,33 @@
+---
+- name:  CHR setting
+  hosts: chr
+  tasks:
+    - name: Create users
+      routeros_command:
+        commands: 
+          - /user add name=stepananton group=read password=stepananton
+
+    - name: Create NTP client
+      routeros_command:
+        commands:
+          - /system ntp client set enabled=yes server=0.ru.pool.ntp.org
+        
+    - name: OSPF with router ID
+      routeros_command:
+        commands: 
+          - /interface bridge add name=loopback
+          - /ip address add address=172.16.0.1 interface=loopback network=172.16.0.1
+          - /routing id add disabled=no id=172.16.0.1 name=OSPF_ID select-dynamic-id=""
+          - /routing ospf instance add name=ospf-1 originate-default=always router-id=OSPF_ID
+          - /routing ospf area add instance=ospf-1 name=backbone
+          - /routing ospf interface-template add area=backbone auth=md5 auth-key=admin interface=ether1
+
+    - name: Get facts
+      routeros_facts:
+        gather_subset:
+          - interfaces
+      register: output_ospf
+
+    - name: Print output
+      debug:
+        var: "output_ospf"
