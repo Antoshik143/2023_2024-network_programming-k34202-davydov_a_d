@@ -8,6 +8,6 @@ Author: Davydov Anton Dmitrievich
 
 Lab: Lab4
 
-Date of create: 
+Date of create: 07.12.23
 
 Date of finished: 
