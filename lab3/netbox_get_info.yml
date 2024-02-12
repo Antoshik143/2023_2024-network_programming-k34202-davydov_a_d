@@ -1,0 +1,15 @@
+---
+- name: "Get information from Netbox"
+  uri:
+    url: "http://51.250.108.72:8000/dcim/devices/"
+    method: GET
+    headers:
+      Content-Type: "application/json"
+      Authorization: "2db4a7ee5a6df6cd463a06f98dae216d81ea9bc4"
+    return_content: yes
+  register: devices_data
+
+- name: Save devices data to a file
+  copy:
+    content: "{{ devices_data.content | to_nice_json }}"
+    dest: "/home/admin/lab3/res.json"
